@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>ScamShield Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛡️ ScamShield Dashboard</h1>
+
+    <p>
+        Security analysis overview
+    </p>
+
+    <div class="result">
+
+        <h2>Total Scans</h2>
+
+        <h1>
+            {{ statistics.total }}
+        </h1>
+
+    </div>
+
+    <div class="result">
+
+        <h2>🔴 High Risk</h2>
+
+        <h1>
+            {{ statistics.high }}
+        </h1>
+
+    </div>
+
+    <div class="result">
+
+        <h2>🟡 Suspicious</h2>
+
+        <h1>
+            {{ statistics.suspicious }}
+        </h1>
+
+    </div>
+
+    <div class="result">
+
+        <h2>🟢 Low Risk</h2>
+
+        <h1>
+            {{ statistics.low }}
+        </h1>
+
+    </div>
+
+    <br>
+
+    <a href="/">← Back</a>
+
+</div>
+
+</body>
+
+</html>

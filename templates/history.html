@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scan History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛡️ Scan History</h1>
+
+    {% if scans %}
+
+        {% for scan in scans %}
+
+            <div class="result">
+
+                <h3>{{ scan["risk_level"] }}</h3>
+
+                <p>
+                    <strong>Type:</strong>
+                    {{ scan["input_type"] }}
+                </p>
+
+                <p>
+                    <strong>Input:</strong>
+                    {{ scan["input_value"] }}
+                </p>
+
+                <p>
+                    <strong>Score:</strong>
+                    {{ scan["risk_score"] }}/100
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    {{ scan["created_at"] }}
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No scans yet.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">← Back to ScamShield</a>
+
+</div>
+
+</body>
+
+</html>

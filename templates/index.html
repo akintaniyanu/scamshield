@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ScamShield</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛡️ ScamShield</h1>
+
+    <p>
+        Check suspicious links, messages, emails and phone numbers
+        before interacting with them.
+    </p>
+
+    <form action="/scan" method="POST">
+
+        <label>What do you want to check?</label>
+
+        <select name="input_type" id="input_type">
+            <option value="url">Website URL</option>
+            <option value="message">Suspicious Message</option>
+            <option value="email">Email Address</option>
+            <option value="phone">Phone Number</option>
+        </select>
+
+        <textarea
+            name="input_value"
+            placeholder="Paste the suspicious content here..."
+            required></textarea>
+
+        <button type="submit">
+            Analyze
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
